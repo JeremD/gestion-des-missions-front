@@ -9,7 +9,7 @@ pipeline {
                 sh 'node -v'
             }
         }
-        stage('compile') {
+        stage('build') {
             steps {
                 sh 'npm install'
                 sh 'npm run build'
@@ -20,7 +20,7 @@ pipeline {
                 branch 'master'
             }
             steps {
-                sh 'ng deploy -base-href=https://jeremd.github.io/gestion-des-missions-front/'
+                echo 'ng deploy -base-href=https://jeremd.github.io/gestion-des-missions-front/'
             }
             post {
                 failure {
