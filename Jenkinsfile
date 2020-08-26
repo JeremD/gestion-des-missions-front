@@ -20,7 +20,7 @@ pipeline {
                 branch 'master'
             }
             steps {
-                sh "ng deploy --base-href=${GHPAGES_MISSIONS}"
+                echo "ng deploy --base-href=${GHPAGES_MISSIONS}"
             }
             post {
                 failure {
