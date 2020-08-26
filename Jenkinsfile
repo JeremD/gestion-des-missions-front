@@ -1,7 +1,7 @@
 pipeline {
     agent any
     tools {
-        maven 'NodeJS 14.8'
+        npm 'NodeJS 14.8'
     }
     stages {
         stage('verify') {
