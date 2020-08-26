@@ -12,7 +12,7 @@ pipeline {
         stage('build') {
             steps {
                 sh 'npm install'
-                sh 'npm run build --prod'
+                sh 'npm run build'
             }
         }
         stage('deploy') {
@@ -20,7 +20,7 @@ pipeline {
                 branch 'master'
             }
             steps {
-                echo 'ng deploy -base-href=https://jeremd.github.io/gestion-des-missions-front/'
+                echo 'ng deploy'
             }
             post {
                 failure {
