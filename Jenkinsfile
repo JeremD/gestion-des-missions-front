@@ -10,11 +10,16 @@ pipeline {
             }
         }
         stage('compile') {
+            steps {
+                sh 'npm install'
+            }
+        }
+        stage('run') {
             when {
                 branch 'master'
             }
             steps {
-                sh 'npm run build'
+                sh 'npm run'
             }
             post {
                 failure {
