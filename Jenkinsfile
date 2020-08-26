@@ -12,14 +12,15 @@ pipeline {
         stage('compile') {
             steps {
                 sh 'npm install'
+                sh 'npm run build'
             }
         }
-        stage('run') {
+        stage('deploy') {
             when {
                 branch 'master'
             }
             steps {
-                sh 'npm run'
+                sh 'ng deploy -base-href=https://jeremd.github.io/gestion-des-missions-front/'
             }
             post {
                 failure {
